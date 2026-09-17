@@ -1,0 +1,336 @@
+version: "4.1"
+name: FreeRTOS
+type: ARM
+deviceName: null
+packDir: null
+srcDirs: []
+virtualFolder:
+  name: <virtual_root>
+  files: []
+  folders:
+    - name: Start
+      files:
+        - path: ../keil_project/Start/core_cm4.h
+        - path: ../keil_project/Start/core_cmFunc.h
+        - path: ../keil_project/Start/core_cmInstr.h
+        - path: ../keil_project/Start/core_cmSimd.h
+        - path: ../keil_project/Start/startup_stm32f411xe.s
+        - path: ../keil_project/Start/system_stm32f4xx.c
+        - path: ../keil_project/Start/system_stm32f4xx.h
+      folders: []
+    - name: Library
+      files:
+        - path: ../keil_project/Library/misc.c
+        - path: ../keil_project/Library/misc.h
+        - path: ../keil_project/Library/stm32f4xx_adc.c
+        - path: ../keil_project/Library/stm32f4xx_adc.h
+        - path: ../keil_project/Library/stm32f4xx_can.c
+        - path: ../keil_project/Library/stm32f4xx_can.h
+        - path: ../keil_project/Library/stm32f4xx_cec.c
+        - path: ../keil_project/Library/stm32f4xx_cec.h
+        - path: ../keil_project/Library/stm32f4xx_crc.c
+        - path: ../keil_project/Library/stm32f4xx_crc.h
+        - path: ../keil_project/Library/stm32f4xx_cryp.c
+        - path: ../keil_project/Library/stm32f4xx_cryp.h
+        - path: ../keil_project/Library/stm32f4xx_cryp_aes.c
+        - path: ../keil_project/Library/stm32f4xx_cryp_des.c
+        - path: ../keil_project/Library/stm32f4xx_cryp_tdes.c
+        - path: ../keil_project/Library/stm32f4xx_dac.c
+        - path: ../keil_project/Library/stm32f4xx_dac.h
+        - path: ../keil_project/Library/stm32f4xx_dbgmcu.c
+        - path: ../keil_project/Library/stm32f4xx_dbgmcu.h
+        - path: ../keil_project/Library/stm32f4xx_dcmi.c
+        - path: ../keil_project/Library/stm32f4xx_dcmi.h
+        - path: ../keil_project/Library/stm32f4xx_dfsdm.c
+        - path: ../keil_project/Library/stm32f4xx_dfsdm.h
+        - path: ../keil_project/Library/stm32f4xx_dma.c
+        - path: ../keil_project/Library/stm32f4xx_dma.h
+        - path: ../keil_project/Library/stm32f4xx_dma2d.c
+        - path: ../keil_project/Library/stm32f4xx_dma2d.h
+        - path: ../keil_project/Library/stm32f4xx_dsi.c
+        - path: ../keil_project/Library/stm32f4xx_dsi.h
+        - path: ../keil_project/Library/stm32f4xx_exti.c
+        - path: ../keil_project/Library/stm32f4xx_exti.h
+        - path: ../keil_project/Library/stm32f4xx_flash.c
+        - path: ../keil_project/Library/stm32f4xx_flash.h
+        - path: ../keil_project/Library/stm32f4xx_flash_ramfunc.c
+        - path: ../keil_project/Library/stm32f4xx_flash_ramfunc.h
+        - path: ../keil_project/Library/stm32f4xx_fmpi2c.c
+        - path: ../keil_project/Library/stm32f4xx_fmpi2c.h
+        - path: ../keil_project/Library/stm32f4xx_gpio.c
+        - path: ../keil_project/Library/stm32f4xx_gpio.h
+        - path: ../keil_project/Library/stm32f4xx_hash.c
+        - path: ../keil_project/Library/stm32f4xx_hash.h
+        - path: ../keil_project/Library/stm32f4xx_hash_md5.c
+        - path: ../keil_project/Library/stm32f4xx_hash_sha1.c
+        - path: ../keil_project/Library/stm32f4xx_i2c.c
+        - path: ../keil_project/Library/stm32f4xx_i2c.h
+        - path: ../keil_project/Library/stm32f4xx_iwdg.c
+        - path: ../keil_project/Library/stm32f4xx_iwdg.h
+        - path: ../keil_project/Library/stm32f4xx_lptim.c
+        - path: ../keil_project/Library/stm32f4xx_lptim.h
+        - path: ../keil_project/Library/stm32f4xx_ltdc.c
+        - path: ../keil_project/Library/stm32f4xx_ltdc.h
+        - path: ../keil_project/Library/stm32f4xx_pwr.c
+        - path: ../keil_project/Library/stm32f4xx_pwr.h
+        - path: ../keil_project/Library/stm32f4xx_qspi.c
+        - path: ../keil_project/Library/stm32f4xx_qspi.h
+        - path: ../keil_project/Library/stm32f4xx_rcc.c
+        - path: ../keil_project/Library/stm32f4xx_rcc.h
+        - path: ../keil_project/Library/stm32f4xx_rng.c
+        - path: ../keil_project/Library/stm32f4xx_rng.h
+        - path: ../keil_project/Library/stm32f4xx_rtc.c
+        - path: ../keil_project/Library/stm32f4xx_rtc.h
+        - path: ../keil_project/Library/stm32f4xx_sai.c
+        - path: ../keil_project/Library/stm32f4xx_sai.h
+        - path: ../keil_project/Library/stm32f4xx_sdio.c
+        - path: ../keil_project/Library/stm32f4xx_sdio.h
+        - path: ../keil_project/Library/stm32f4xx_spdifrx.c
+        - path: ../keil_project/Library/stm32f4xx_spdifrx.h
+        - path: ../keil_project/Library/stm32f4xx_spi.c
+        - path: ../keil_project/Library/stm32f4xx_spi.h
+        - path: ../keil_project/Library/stm32f4xx_syscfg.c
+        - path: ../keil_project/Library/stm32f4xx_syscfg.h
+        - path: ../keil_project/Library/stm32f4xx_tim.c
+        - path: ../keil_project/Library/stm32f4xx_tim.h
+        - path: ../keil_project/Library/stm32f4xx_usart.c
+        - path: ../keil_project/Library/stm32f4xx_usart.h
+        - path: ../keil_project/Library/stm32f4xx_wwdg.c
+        - path: ../keil_project/Library/stm32f4xx_wwdg.h
+      folders: []
+    - name: Hardware
+      files: []
+      folders:
+        - name: LCD
+          files:
+            - path: ../Hareware/LCD/LCD_Define.c
+            - path: ../Hareware/LCD/LCD_Define.h
+            - path: ../Hareware/LCD/LCD_Hardware.c
+            - path: ../Hareware/LCD/LCD_Hardware.h
+            - path: ../Hareware/LCD/LCD.c
+            - path: ../Hareware/LCD/LCD.h
+            - path: ../Hareware/LCD/Touch_I2C.c
+            - path: ../Hareware/LCD/Touch_I2C.h
+            - path: ../Hareware/LCD/Touch.c
+            - path: ../Hareware/LCD/Touch.h
+          folders: []
+    - name: System
+      files:
+        - path: ../keil_project/System/Delay.c
+        - path: ../keil_project/System/Delay.h
+      folders: []
+    - name: User
+      files:
+        - path: ../keil_project/User/main.c
+        - path: ../keil_project/User/main.h
+        - path: ../keil_project/User/stm32f4xx.h
+        - path: ../keil_project/User/stm32f4xx_conf.h
+        - path: ../keil_project/User/stm32f4xx_it.c
+        - path: ../keil_project/User/stm32f4xx_it.h
+      folders: []
+    - name: FreeRTOS
+      files:
+        - path: ../Middle/FreeRTOS/FreeRTOSConfig.h
+      folders:
+        - name: Inc
+          files:
+            - path: ../Middle/FreeRTOS/inc/atomic.h
+            - path: ../Middle/FreeRTOS/inc/croutine.h
+            - path: ../Middle/FreeRTOS/inc/deprecated_definitions.h
+            - path: ../Middle/FreeRTOS/inc/event_groups.h
+            - path: ../Middle/FreeRTOS/inc/FreeRTOS.h
+            - path: ../Middle/FreeRTOS/inc/list.h
+            - path: ../Middle/FreeRTOS/inc/message_buffer.h
+            - path: ../Middle/FreeRTOS/inc/mpu_prototypes.h
+            - path: ../Middle/FreeRTOS/inc/mpu_syscall_numbers.h
+            - path: ../Middle/FreeRTOS/inc/mpu_wrappers.h
+            - path: ../Middle/FreeRTOS/inc/newlib-freertos.h
+            - path: ../Middle/FreeRTOS/inc/picolibc-freertos.h
+            - path: ../Middle/FreeRTOS/inc/portable.h
+            - path: ../Middle/FreeRTOS/inc/projdefs.h
+            - path: ../Middle/FreeRTOS/inc/queue.h
+            - path: ../Middle/FreeRTOS/inc/semphr.h
+            - path: ../Middle/FreeRTOS/inc/stack_macros.h
+            - path: ../Middle/FreeRTOS/inc/StackMacros.h
+            - path: ../Middle/FreeRTOS/inc/stream_buffer.h
+            - path: ../Middle/FreeRTOS/inc/task.h
+            - path: ../Middle/FreeRTOS/inc/timers.h
+          folders: []
+        - name: Port
+          files:
+            - path: ../Middle/FreeRTOS/port/heap_4.c
+            - path: ../Middle/FreeRTOS/port/port.c
+            - path: ../Middle/FreeRTOS/port/portmacro.h
+          folders: []
+        - name: Scr
+          files:
+            - path: ../Middle/FreeRTOS/src/croutine.c
+            - path: ../Middle/FreeRTOS/src/event_groups.c
+            - path: ../Middle/FreeRTOS/src/list.c
+            - path: ../Middle/FreeRTOS/src/queue.c
+            - path: ../Middle/FreeRTOS/src/stream_buffer.c
+            - path: ../Middle/FreeRTOS/src/tasks.c
+            - path: ../Middle/FreeRTOS/src/timers.c
+          folders: []
+dependenceList: []
+outDir: build
+miscInfo:
+  uid: 6529c07f770982490a00d6aa35f4b7f0
+targets:
+  Target 1:
+    cppPreprocessAttrs:
+      defineList:
+        - USE_STDPERIPH_DRIVER
+        - STM32F411xE
+      incList:
+        - ../keil_project/Library
+        - ../keil_project/Start
+        - ../keil_project/User
+        - ../Hareware/LCD
+        - ../Middle/FreeRTOS
+        - ../keil_project/System
+        - ../Middle/FreeRTOS/inc
+        - ../Middle/FreeRTOS/port
+        - ../Middle/FreeRTOS/src
+        - .cmsis/include
+        - ../keil_project/RTE/_Target 1
+      libList:
+        - ..
+        - ../Hareware
+        - ../keil_project
+        - .
+        - ../Middle
+        - ../keil_project/DebugConfig
+        - ../keil_project/Library
+        - ../keil_project/Listings
+        - ../keil_project/Objects
+        - ../keil_project/Start
+        - ../keil_project/System
+        - ../keil_project/User
+        - ../Hareware/LCD
+        - ../Middle/FreeRTOS
+    excludeList: []
+    settings:
+      debugger: cortex-debug
+    toolchain: AC5
+    toolchainConfigMap:
+      AC5:
+        archExtensions: ""
+        cpuType: Cortex-M4
+        floatingPointHardware: single
+        options:
+          version: 4
+          afterBuildTasks: []
+          asm-compiler:
+            defines: []
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            CXX_FLAGS: --diag_suppress=1 --diag_suppress=1295
+            C_FLAGS: --diag_suppress=1 --diag_suppress=1295
+            c99-mode: true
+            one-elf-section-per-function: true
+            optimization: level-0
+            warnings: all-warnings
+          global:
+            output-debug-info: enable
+            use-microLIB: false
+          linker:
+            $disableOutputTask: false
+            $outputTaskExcludes:
+              - .bin
+              - .s19
+            output-format: elf
+            ro-base: "0x08000000"
+            rw-base: "0x20000000"
+            xo-base: ""
+        scatterFilePath: ""
+        storageLayout:
+          RAM:
+            - id: 1
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 3
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 1
+              isChecked: true
+              mem:
+                size: "0x20000"
+                startAddr: "0x20000000"
+              noInit: false
+              tag: IRAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: IRAM
+          ROM:
+            - id: 1
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 3
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 1
+              isChecked: true
+              isStartup: true
+              mem:
+                size: "0x80000"
+                startAddr: "0x8000000"
+              tag: IROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: IROM
+        useCustomScatterFile: false
+    uploadConfigMap:
+      JLink:
+        baseAddr: ""
+        bin: ""
+        cpuInfo:
+          cpuName: "null"
+          vendor: "null"
+        otherCmds: ""
+        proType: 1
+        speed: 8000
+      OpenOCD:
+        baseAddr: "0x08000000"
+        bin: ""
+        interface: stlink
+        target: stm32f4x
+    uploader: OpenOCD
