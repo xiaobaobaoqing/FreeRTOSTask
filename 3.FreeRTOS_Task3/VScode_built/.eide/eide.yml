@@ -1,5 +1,5 @@
 version: "4.1"
-name: FreeRTOS_Task2
+name: FreeRTOS_Task3
 type: ARM
 deviceName: null
 packDir: null
@@ -227,25 +227,25 @@ virtualFolder:
               folders: []
     - name: Hardware
       files:
-        - path: ../Hareware/Key.c
-        - path: ../Hareware/Key.h
+        - path: ../Hardware/Key.c
+        - path: ../Hardware/Key.h
       folders:
         - name: LCD
           files:
-            - path: ../Hareware/LCD/LCD.c
-            - path: ../Hareware/LCD/LCD.h
-            - path: ../Hareware/LCD/LCD_Define.c
-            - path: ../Hareware/LCD/LCD_Define.h
+            - path: ../Hardware/LCD/LCD.c
+            - path: ../Hardware/LCD/LCD.h
+            - path: ../Hardware/LCD/LCD_Define.c
+            - path: ../Hardware/LCD/LCD_Define.h
           folders: []
         - name: System
           files:
-            - path: ../Hareware/System/Delay.c
-            - path: ../Hareware/System/Delay.h
+            - path: ../Hardware/System/Delay.c
+            - path: ../Hardware/System/Delay.h
           folders: []
         - name: BL
           files:
-            - path: ../Hareware/BL/Bluetooth.c
-            - path: ../Hareware/BL/Bluetooth.h
+            - path: ../Hardware/BL/Bluetooth.c
+            - path: ../Hardware/BL/Bluetooth.h
           folders: []
 dependenceList: []
 outDir: build
@@ -271,12 +271,35 @@ targets:
         - ../Middle/FreeRTOS/inc
         - ../Middle/FreeRTOS/port
         - ../Middle/FreeRTOS/src
+        - ../Hardware
+        - ../Hardware/BL
+        - ../Hardware/LCD
+        - ../Hardware/LCD - 副本
+        - ../Hardware/System
+      libList:
         - ../Hareware
-        - ../Hareware/LCD
-        - ../Hareware/System
+        - ../MDK_ARM
+        - ../Middle
+        - .
         - ../Hareware/BL
-      libList: []
-    excludeList: []
+        - ../Hareware/LCD
+        - ../Hareware/LCD - 副本
+        - ../Hareware/System
+        - ../MDK_ARM/DebugConfig
+        - ../MDK_ARM/Library
+        - ../MDK_ARM/Listings
+        - ../MDK_ARM/Objects
+        - ../MDK_ARM/RTE
+        - ../MDK_ARM/Start
+        - ../MDK_ARM/User
+        - ../Middle/FreeRTOS/inc
+        - ../Middle/FreeRTOS/port
+        - ../Middle/FreeRTOS/src
+        - ../MDK_ARM/Library/Inc
+        - ../MDK_ARM/Library/Src
+    excludeList:
+      - ../Hareware/LCD/LCD_Define.c
+      - ../Hareware/LCD/LCD.c
     settings:
       debugger: cortex-debug
     toolchain: AC6
