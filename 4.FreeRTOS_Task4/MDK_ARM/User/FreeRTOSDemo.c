@@ -4,7 +4,8 @@
 #include "Key.h"
 #include "LCD.h"
 #include "Bluetooth.h"
-
+#include "Delay.h"
+#include "Timer.h"
 
 
 #define Stack_StartTask 128
@@ -29,7 +30,10 @@ void Task2(void *pvParameters);
 TaskHandle_t Task3Handle = NULL;
 void Task3(void *pvParameters);
 
-
+#define Stack_TaskTimerCheck 128
+#define Priority_TaskTimerCheck 0  //最低优先级
+TaskHandle_t TaskTimerCheckHandle = NULL;
+void TaskTimerCheck(void *pvParameters);
 
 void FreeRTOS_Demo(void)
 {
@@ -41,10 +45,10 @@ void StartTask(void *pvParameters)
 {
     taskENTER_CRITICAL();
 
-    xTaskCreate(Task1,"Task1",Stack_Task1,NULL,Priority_Task1,&Task1Handle);
-    xTaskCreate(Task2,"Task2",Stack_Task2,NULL,Priority_Task2,&Task2Handle);
+    // xTaskCreate(Task1,"Task1",Stack_Task1,NULL,Priority_Task1,&Task1Handle);
+    // xTaskCreate(Task2,"Task2",Stack_Task2,NULL,Priority_Task2,&Task2Handle);
     xTaskCreate(Task3,"Task3",Stack_Task3,NULL,Priority_Task3,&Task3Handle);
-
+    xTaskCreate(TaskTimerCheck,"TaskTimerCheck",Stack_TaskTimerCheck,NULL,Priority_TaskTimerCheck,&TaskTimerCheckHandle);
     vTaskDelete (NULL);
     taskEXIT_CRITICAL();
 
@@ -77,24 +81,58 @@ void Task2(void *pvParameters)
     }
 }
 
+void TaskTimerCheck(void *pvParameters)
+{
+    while(1)
+    {
+        if(TIM3_flag == 1)
+        {
+            Serial_Printf("优先级4任务执行\r\n");
+        }
+        if(TIM2_flag == 1)
+        {
+            Serial_Printf("优先级6任务执行\r\n");
+        }
+        TIM2_flag = 0;
+        TIM3_flag = 0;
+        vTaskDelay(10); // 10ms轮询一次，不占用CPU
+
+
+
+    }
+}
 
 void Task3(void *pvParameters)
 {
     uint8_t key_num = 0;
-    Serial_Printf("Task3 started\r\n");  
+    uint8_t num = 0;
+
     while(1)
     {
         key_num = Key();
         if(key_num == 1)
         {
-            Serial_Printf("Key 1 Pressed\n");
-            vTaskSuspend(Task1Handle);
+            while(1)
+            {
+                if(++num == 5)
+                {
+                    Serial_Printf("关中断!!r\n");
+                    portDISABLE_INTERRUPTS();
+                    Delay_ms(5000);
+                    Serial_Printf("关中断!!r\n");
+                    portENABLE_INTERRUPTS();
+                }
+                vTaskDelay(1000);
+
+           }
         }
-        if(key_num == 2)
-        {
-            Serial_Printf("Key 2 Pressed\n");
-            vTaskResume(Task1Handle);
-        }
-        vTaskDelay(10);
+
+    vTaskDelay(1000);
+  
+        // if(key_num == 2)
+        // {
+
+        // }
+        // vTaskDelay(10);
     }
 }

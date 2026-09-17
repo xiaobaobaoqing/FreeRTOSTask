@@ -247,6 +247,11 @@ virtualFolder:
             - path: ../Hardware/BL/Bluetooth.c
             - path: ../Hardware/BL/Bluetooth.h
           folders: []
+        - name: Timer
+          files:
+            - path: ../Hardware/Timer/Timer.c
+            - path: ../Hardware/Timer/Timer.h
+          folders: []
 dependenceList: []
 outDir: build
 miscInfo:
@@ -276,6 +281,7 @@ targets:
         - ../Hardware/LCD
         - ../Hardware/LCD - 副本
         - ../Hardware/System
+        - ../Hardware/Timer
       libList:
         - ../Hareware
         - ../MDK_ARM

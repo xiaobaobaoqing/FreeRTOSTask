@@ -1,11 +1,5 @@
 #include "stm32f4xx_hal.h"
-#include "LCD.h"
 #include "main.h"
-#include "FreeRTOS.h"
-#include "task.h"
-#include "Bluetooth.h"
-#include "Key.h"
-#include "FreeRTOSDemo.h"
 
 
 int main(void)
@@ -16,15 +10,32 @@ int main(void)
     LCD_Init();
     Bluetooth_Init();
     Bluetooth_ON();
-    
+
+
+    Timer2_Init();
+    Timer3_Init();
     FreeRTOS_Demo();
+
+    uint8_t led1_state = 0;
+    uint8_t led2_state = 0;
 
     while(1)
     {
 
+      //   if(TIM3_flag == 1)
+      //   {
+      //       TIM3_flag = 0;       // 清除中断标记
+      //       Serial_Printf("优先级4任务执行\r\n");
+      //   }
+      //   if(TIM2_flag == 1)
+      //   {
+      //       TIM2_flag = 0;      
+      //       Serial_Printf("优先级6任务执行\r\n");
+
+      // }
+
     }
 }
-
 
 
 

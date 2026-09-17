@@ -22,6 +22,7 @@
 #include "main.h"
 #include "stm32f4xx_it.h"
 #include "stm32f4xx_hal.h"
+#include "stm32f4xx_hal_tim.h"
 #include "FreeRTOS.h"
 #include "task.h"
 
@@ -59,6 +60,21 @@ void USART1_IRQHandler(void)
 {
     HAL_UART_IRQHandler(&huart1);
 }
+
+extern TIM_HandleTypeDef TIM2_Base;
+
+void TIM2_IRQHandler(void)
+{
+    HAL_TIM_IRQHandler(&TIM2_Base);
+}
+
+extern TIM_HandleTypeDef TIM3_Base;
+
+void TIM3_IRQHandler(void)
+{
+    HAL_TIM_IRQHandler(&TIM3_Base);
+}
+
 
 /**
   * @brief   This function handles NMI exception.
