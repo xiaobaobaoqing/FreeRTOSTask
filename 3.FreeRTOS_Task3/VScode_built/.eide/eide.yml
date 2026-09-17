@@ -1,0 +1,402 @@
+version: "4.1"
+name: FreeRTOS_Task2
+type: ARM
+deviceName: null
+packDir: null
+srcDirs: []
+virtualFolder:
+  name: <virtual_root>
+  files: []
+  folders:
+    - name: Start
+      files:
+        - path: ../MDK_ARM/Start/core_cm4.h
+        - path: ../MDK_ARM/Start/cmsis_version.h
+        - path: ../MDK_ARM/Start/cmsis_compiler.h
+        - path: ../MDK_ARM/Start/cmsis_armclang.h
+        - path: ../MDK_ARM/Start/startup_stm32f411xe.s
+        - path: ../MDK_ARM/Start/stm32f411xe.h
+        - path: ../MDK_ARM/Start/stm32f4xx.h
+        - path: ../MDK_ARM/Start/stm32f4xx_hal_conf.h
+        - path: ../MDK_ARM/Start/stm32f4xx_it.c
+        - path: ../MDK_ARM/Start/stm32f4xx_it.h
+        - path: ../MDK_ARM/Start/system_stm32f4xx.c
+        - path: ../MDK_ARM/Start/system_stm32f4xx.h
+        - path: ../MDK_ARM/Start/mpu_armv7.h
+      folders: []
+    - name: Library
+      files: []
+      folders:
+        - name: Inc
+          files:
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_adc.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_adc_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_can.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_cec.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_cortex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_crc.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_cryp.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_cryp_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_dac.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_dac_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_dcmi.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_dcmi_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_def.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_dfsdm.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_dma.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_dma_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_dma2d.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_dsi.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_eth.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_exti.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_flash.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_flash_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_flash_ramfunc.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_fmpi2c.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_fmpi2c_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_fmpsmbus.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_fmpsmbus_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_gpio.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_gpio_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_hash.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_hash_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_hcd.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_i2c.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_i2c_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_i2s.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_i2s_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_irda.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_iwdg.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_lptim.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_ltdc.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_ltdc_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_mmc.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_nand.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_nor.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_pccard.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_pcd.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_pcd_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_pwr.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_pwr_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_qspi.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_rcc.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_rcc_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_rng.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_rtc.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_rtc_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_sai.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_sai_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_sd.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_sdram.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_smartcard.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_smbus.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_spdifrx.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_spi.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_sram.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_tim.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_tim_ex.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_uart.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_usart.h
+            - path: ../MDK_ARM/Library/Inc/stm32f4xx_hal_wwdg.h
+          folders: []
+        - name: Src
+          files:
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_adc.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_adc_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_can.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_cec.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_cortex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_crc.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_cryp.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_cryp_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_dac.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_dac_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_dcmi.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_dcmi_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_dfsdm.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_dma.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_dma_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_dma2d.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_dsi.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_eth.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_exti.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_flash.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_flash_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_flash_ramfunc.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_fmpi2c.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_fmpi2c_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_fmpsmbus.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_fmpsmbus_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_gpio.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_hash.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_hash_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_hcd.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_i2c.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_i2c_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_i2s.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_i2s_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_irda.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_iwdg.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_lptim.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_ltdc.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_ltdc_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_mmc.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_nand.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_nor.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_pccard.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_pcd.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_pcd_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_pwr.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_pwr_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_qspi.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_rcc.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_rcc_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_rng.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_rtc.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_rtc_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_sai.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_sai_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_sd.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_sdram.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_smartcard.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_smbus.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_spdifrx.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_spi.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_sram.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_tim.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_tim_ex.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_uart.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_usart.c
+            - path: ../MDK_ARM/Library/Src/stm32f4xx_hal_wwdg.c
+          folders: []
+    - name: User
+      files:
+        - path: ../MDK_ARM/User/main.c
+        - path: ../MDK_ARM/User/main.h
+        - path: ../MDK_ARM/User/FreeRTOSDemo.c
+        - path: ../MDK_ARM/User/FreeRTOSDemo.h
+      folders: []
+    - name: Middle
+      files: []
+      folders:
+        - name: FreeRTOS
+          files:
+            - path: ../Middle/FreeRTOS/FreeRTOSConfig.h
+          folders:
+            - name: inc
+              files:
+                - path: ../Middle/FreeRTOS/inc/atomic.h
+                - path: ../Middle/FreeRTOS/inc/croutine.h
+                - path: ../Middle/FreeRTOS/inc/deprecated_definitions.h
+                - path: ../Middle/FreeRTOS/inc/event_groups.h
+                - path: ../Middle/FreeRTOS/inc/FreeRTOS.h
+                - path: ../Middle/FreeRTOS/inc/list.h
+                - path: ../Middle/FreeRTOS/inc/message_buffer.h
+                - path: ../Middle/FreeRTOS/inc/mpu_prototypes.h
+                - path: ../Middle/FreeRTOS/inc/mpu_syscall_numbers.h
+                - path: ../Middle/FreeRTOS/inc/mpu_wrappers.h
+                - path: ../Middle/FreeRTOS/inc/newlib-freertos.h
+                - path: ../Middle/FreeRTOS/inc/picolibc-freertos.h
+                - path: ../Middle/FreeRTOS/inc/portable.h
+                - path: ../Middle/FreeRTOS/inc/projdefs.h
+                - path: ../Middle/FreeRTOS/inc/queue.h
+                - path: ../Middle/FreeRTOS/inc/semphr.h
+                - path: ../Middle/FreeRTOS/inc/stack_macros.h
+                - path: ../Middle/FreeRTOS/inc/StackMacros.h
+                - path: ../Middle/FreeRTOS/inc/stream_buffer.h
+                - path: ../Middle/FreeRTOS/inc/task.h
+                - path: ../Middle/FreeRTOS/inc/timers.h
+              folders: []
+            - name: src
+              files:
+                - path: ../Middle/FreeRTOS/src/croutine.c
+                - path: ../Middle/FreeRTOS/src/event_groups.c
+                - path: ../Middle/FreeRTOS/src/list.c
+                - path: ../Middle/FreeRTOS/src/queue.c
+                - path: ../Middle/FreeRTOS/src/stream_buffer.c
+                - path: ../Middle/FreeRTOS/src/tasks.c
+                - path: ../Middle/FreeRTOS/src/timers.c
+              folders: []
+            - name: port
+              files:
+                - path: ../Middle/FreeRTOS/port/heap_4.c
+                - path: ../Middle/FreeRTOS/port/port.c
+                - path: ../Middle/FreeRTOS/port/portmacro.h
+              folders: []
+    - name: Hardware
+      files:
+        - path: ../Hareware/Key.c
+        - path: ../Hareware/Key.h
+      folders:
+        - name: LCD
+          files:
+            - path: ../Hareware/LCD/LCD.c
+            - path: ../Hareware/LCD/LCD.h
+            - path: ../Hareware/LCD/LCD_Define.c
+            - path: ../Hareware/LCD/LCD_Define.h
+          folders: []
+        - name: System
+          files:
+            - path: ../Hareware/System/Delay.c
+            - path: ../Hareware/System/Delay.h
+          folders: []
+        - name: BL
+          files:
+            - path: ../Hareware/BL/Bluetooth.c
+            - path: ../Hareware/BL/Bluetooth.h
+          folders: []
+dependenceList: []
+outDir: build
+miscInfo:
+  uid: eb83330d7e85af174782a515d43e8b35
+targets:
+  Target_1:
+    cppPreprocessAttrs:
+      defineList:
+        - STM32F411xE
+        - USE_HAL_DRIVER
+      incList:
+        - ../MDK_ARM/Library
+        - ../MDK_ARM/Library/Inc
+        - ../MDK_ARM/Library/Inc/Legacy
+        - ../MDK_ARM/Library/Src
+        - ../MDK_ARM/Start
+        - ../MDK_ARM/User
+        - .cmsis/include
+        - ../MDK_ARM/RTE/_Target_1
+        - ../Middle
+        - ../Middle/FreeRTOS
+        - ../Middle/FreeRTOS/inc
+        - ../Middle/FreeRTOS/port
+        - ../Middle/FreeRTOS/src
+        - ../Hareware
+        - ../Hareware/LCD
+        - ../Hareware/System
+        - ../Hareware/BL
+      libList: []
+    excludeList: []
+    settings:
+      debugger: cortex-debug
+    toolchain: AC6
+    toolchainConfigMap:
+      AC6:
+        archExtensions: ""
+        cpuType: Cortex-M4
+        floatingPointHardware: single
+        options:
+          version: 3
+          afterBuildTasks: []
+          asm-compiler:
+            $use: asm-auto
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            language-c: c99
+            language-cpp: c++11
+            misc-controls: -Wno-extra-semi-stmt -Wno-padded -Wno-unsafe-buffer-usage -Wreserved‑identifier -Wno-covered-switch-default
+            one-elf-section-per-function: true
+            optimization: level-0
+            short-enums#wchar: true
+            warnings: ac5-like-warnings
+          global:
+            output-debug-info: enable
+          linker:
+            $outputTaskExcludes:
+              - .bin
+              - .s19
+            misc-controls: --diag_suppress=L6329
+            output-format: elf
+            ro-base: "0x08000000"
+            rw-base: "0x20000000"
+        scatterFilePath: ""
+        storageLayout:
+          RAM:
+            - id: 1
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 3
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 1
+              isChecked: true
+              mem:
+                size: "0x20000"
+                startAddr: "0x20000000"
+              noInit: false
+              tag: IRAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: IRAM
+          ROM:
+            - id: 1
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 3
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 1
+              isChecked: true
+              isStartup: true
+              mem:
+                size: "0x80000"
+                startAddr: "0x8000000"
+              tag: IROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: IROM
+        useCustomScatterFile: false
+    uploadConfigMap:
+      JLink:
+        baseAddr: ""
+        bin: ""
+        cpuInfo:
+          cpuName: "null"
+          vendor: "null"
+        otherCmds: ""
+        proType: 1
+        speed: 8000
+      OpenOCD:
+        baseAddr: "0x08000000"
+        bin: ""
+        interface: stlink
+        target: stm32f4x
+    uploader: OpenOCD

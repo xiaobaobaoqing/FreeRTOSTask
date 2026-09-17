@@ -1,0 +1,20 @@
+﻿#Keil MDK编译产物
+*.uvgui*
+*.hex
+*.axf
+*.elf
+*.map
+*.o
+*.d
+*.crf
+*.dep
+*.lnp
+*.sct
+Obj/
+List/
+DebugConfig/
+RTE/
+#系统文件
+desktop.ini
+.DS_Store
+.vscode/
