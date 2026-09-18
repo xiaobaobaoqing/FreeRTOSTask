@@ -1,11 +1,5 @@
-#include "FreeRTOS.h"
-#include "task.h"
 #include "FreeRTOSDemo.h"
-#include "Key.h"
-#include "LCD.h"
-#include "Bluetooth.h"
-#include "Delay.h"
-#include "Timer.h"
+
 
 
 #define Stack_StartTask 128
@@ -24,16 +18,11 @@ void Task1(void *pvParameters);
 TaskHandle_t Task2Handle = NULL;
 void Task2(void *pvParameters);
 
+List_t TestList;
+ListItem_t TestItem1;
+ListItem_t TestItem2;
+ListItem_t TestItem3;
 
-#define Stack_Task3 128
-#define Priority_Task3 4
-TaskHandle_t Task3Handle = NULL;
-void Task3(void *pvParameters);
-
-#define Stack_TaskTimerCheck 128
-#define Priority_TaskTimerCheck 0  //最低优先级
-TaskHandle_t TaskTimerCheckHandle = NULL;
-void TaskTimerCheck(void *pvParameters);
 
 void FreeRTOS_Demo(void)
 {
@@ -45,10 +34,9 @@ void StartTask(void *pvParameters)
 {
     taskENTER_CRITICAL();
 
-    // xTaskCreate(Task1,"Task1",Stack_Task1,NULL,Priority_Task1,&Task1Handle);
-    // xTaskCreate(Task2,"Task2",Stack_Task2,NULL,Priority_Task2,&Task2Handle);
-    xTaskCreate(Task3,"Task3",Stack_Task3,NULL,Priority_Task3,&Task3Handle);
-    // xTaskCreate(TaskTimerCheck,"TaskTimerCheck",Stack_TaskTimerCheck,NULL,Priority_TaskTimerCheck,&TaskTimerCheckHandle);
+    xTaskCreate(Task1,"Task1",Stack_Task1,NULL,Priority_Task1,&Task1Handle);
+    xTaskCreate(Task2,"Task2",Stack_Task2,NULL,Priority_Task2,&Task2Handle);
+
     vTaskDelete (NULL);
     taskEXIT_CRITICAL();
 
@@ -61,46 +49,78 @@ void Task1(void *pvParameters)
     {
 
         LCD_LED(20,20,RED);
-        vTaskDelay(1000);
+        vTaskDelay(500);
         LCD_LED(20,20,BLACK);
-        vTaskDelay(1000);
+        vTaskDelay(500);
     }
 }
 
 void Task2(void *pvParameters)
 {
 
+    vListInitialise(&TestList);
+    vListInitialiseItem(&TestItem1);
+    vListInitialiseItem(&TestItem2);
+    vListInitialiseItem(&TestItem3);
+    TestItem1.xItemValue = 40;
+    TestItem2.xItemValue = 60;
+    TestItem3.xItemValue = 50;
+
+    vTaskDelay(10000);
+    Serial_Printf("TestList\t\t0x%p\t\r\n",&TestList);
+    Serial_Printf("TestList->pxIndex\t0x%p\t\r\n",TestList.pxIndex);
+    Serial_Printf("TestList->xListEnd\t0x%p\t\r\n",&(TestList.xListEnd));
+    Serial_Printf("TestItem1\t\t0x%p\t\r\n",&TestItem1);
+    Serial_Printf("TestItem2\t\t0x%p\t\r\n",&TestItem2);
+    Serial_Printf("TestItem3\t\t0x%p\t\r\n",&TestItem3);
+
+    Serial_Printf("插入列表项一\r\n",&TestItem3);
+    vListInsert(&TestList,&TestItem1);
+    Serial_Printf("TestList->xListEnd->pxNext\t0x%p\t\r\n",TestList.xListEnd.pxNext);
+    Serial_Printf("ListItem1->pxNext\t0x%p\t\r\n",TestItem1.pxNext);
+    Serial_Printf("TestList->xListEnd->pxPrevious\t0x%p\t\r\n",TestList.xListEnd.pxNext);
+    Serial_Printf("ListItem1->pxPrevious\t0x%p\t\r\n",TestItem1.pxPrevious);
+
+    Serial_Printf("插入列表项二\r\n",&TestItem2);
+    vListInsert(&TestList,&TestItem2);
+    Serial_Printf("TestList->xListEnd->pxNext\t0x%p\t\r\n",TestList.xListEnd.pxNext);
+    Serial_Printf("ListItem1->pxNext\t0x%p\t\r\n",TestItem1.pxNext);
+    Serial_Printf("ListItem2->pxNext\t0x%p\t\r\n",TestItem2.pxNext);
+    Serial_Printf("TestList->xListEnd->pxPrevious\t0x%p\t\r\n",TestList.xListEnd.pxNext);
+    Serial_Printf("ListItem1->pxPrevious\t0x%p\t\r\n",TestItem1.pxPrevious);
+    Serial_Printf("ListItem2->pxPrevious\t0x%p\t\r\n",TestItem2.pxPrevious);
+
+    Serial_Printf("插入列表项三\r\n",&TestItem3);
+    vListInsert(&TestList,&TestItem3);
+    Serial_Printf("TestList->xListEnd->pxNext\t0x%p\t\r\n",TestList.xListEnd.pxNext);
+    Serial_Printf("ListItem1->pxNext\t0x%p\t\r\n",TestItem1.pxNext);
+    Serial_Printf("ListItem2->pxNext\t0x%p\t\r\n",TestItem2.pxNext);
+    Serial_Printf("ListItem3->pxNext\t0x%p\t\r\n",TestItem3.pxNext);
+    Serial_Printf("TestList->xListEnd->pxPrevious\t0x%p\t\r\n",TestList.xListEnd.pxNext);
+    Serial_Printf("ListItem1->pxPrevious\t0x%p\t\r\n",TestItem1.pxPrevious);
+    Serial_Printf("ListItem2->pxPrevious\t0x%p\t\r\n",TestItem2.pxPrevious);
+    Serial_Printf("ListItem3->pxPrevious\t0x%p\t\r\n",TestItem3.pxPrevious);
+
+    Serial_Printf("删除列表项二\r\n",&TestItem2);
+    vListRemove(&TestItem2);
+    Serial_Printf("TestList->xListEnd->pxNext\t0x%p\t\r\n",TestList.xListEnd.pxNext);
+    Serial_Printf("ListItem1->pxNext\t0x%p\t\r\n",TestItem1.pxNext);
+    Serial_Printf("ListItem3->pxNext\t0x%p\t\r\n",TestItem3.pxNext);
+    Serial_Printf("TestList->xListEnd->pxPrevious\t0x%p\t\r\n",TestList.xListEnd.pxNext);
+    Serial_Printf("ListItem1->pxPrevious\t0x%p\t\r\n",TestItem1.pxPrevious);
+    Serial_Printf("ListItem3->pxPrevious\t0x%p\t\r\n",TestItem3.pxPrevious);
+
+
+
+
+
+
 
     while(1)
     {
+        vTaskDelay(1000);
 
-        LCD_LED(50,50,GREEN);
-        vTaskDelay(100);
-        LCD_LED(50,50,BLACK);
-        vTaskDelay(100);
+
     }
 }
 
-void TaskTimerCheck(void *pvParameters)
-{
-
-}
-
-void Task3(void *pvParameters)
-{
-    uint8_t key_num = 0;
-
-    while(1)
-    {
-        key_num = Key();
-        if(key_num == 1)
-        {
-
-        }
-        if(key_num == 2)
-        {
-
-        }
-        vTaskDelay(10);
-    }
-}
