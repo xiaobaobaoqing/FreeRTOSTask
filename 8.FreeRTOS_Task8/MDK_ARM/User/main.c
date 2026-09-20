@@ -11,19 +11,18 @@ int main(void)
     Bluetooth_Init();
     Bluetooth_ON();
 
+    
+      FreeRTOS_Demo();
 
-    FreeRTOS_Demo();
 
-    uint8_t led1_state = 0;
-    uint8_t led2_state = 0;
+
 
     while(1)
     {
 
-      //   if(TIM3_flag == 1)
-
 
     }
+
 }
 
 

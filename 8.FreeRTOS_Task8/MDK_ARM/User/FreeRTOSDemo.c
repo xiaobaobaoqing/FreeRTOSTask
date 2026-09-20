@@ -14,7 +14,7 @@ void Task1(void *pvParameters);
 
 
 #define Stack_Task2 128
-#define Priority_Task2 3
+#define Priority_Task2 2
 TaskHandle_t Task2Handle = NULL;
 void Task2(void *pvParameters);
 
@@ -41,13 +41,12 @@ void StartTask(void *pvParameters)
 void Task1(void *pvParameters)
 {
 
+    uint32_t i = 0;
     while(1)
     {
+        Serial_Printf("Task1运行次数%d\n",++i);
+        Delay_ms(10);
 
-        LCD_LED(20,20,RED);
-        vTaskDelay(500);
-        LCD_LED(20,20,BLACK);
-        vTaskDelay(500);
     }
 }
 
@@ -55,12 +54,13 @@ void Task2(void *pvParameters)
 {
 
 
-
+    uint32_t i = 0;
 
     while(1)
     {
-        vTaskDelay(1000);
-
+        
+        Serial_Printf("Task2运行次数%d\n",++i);
+        Delay_ms(10);
 
     }
 }
