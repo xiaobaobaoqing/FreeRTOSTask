@@ -14,7 +14,17 @@ Obj/
 List/
 DebugConfig/
 RTE/
+
 #系统文件
-desktop.ini
 .DS_Store
-.vscode/
+
+
+# EIDE 插件缓存
+/.cmsis/
+/build/
+
+# 其他临时
+*.bak
+*.tmp
+
+**/.cmsis/
