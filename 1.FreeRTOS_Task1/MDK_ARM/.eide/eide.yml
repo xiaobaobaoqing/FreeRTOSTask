@@ -1,5 +1,5 @@
 version: "4.1"
-name: FreeRTOS
+name: FreeRTOS_Task1
 type: ARM
 deviceName: null
 packDir: null
@@ -103,16 +103,16 @@ virtualFolder:
       folders:
         - name: LCD
           files:
-            - path: ../Hareware/LCD/LCD_Define.c
-            - path: ../Hareware/LCD/LCD_Define.h
-            - path: ../Hareware/LCD/LCD_Hardware.c
-            - path: ../Hareware/LCD/LCD_Hardware.h
-            - path: ../Hareware/LCD/LCD.c
-            - path: ../Hareware/LCD/LCD.h
-            - path: ../Hareware/LCD/Touch_I2C.c
-            - path: ../Hareware/LCD/Touch_I2C.h
-            - path: ../Hareware/LCD/Touch.c
-            - path: ../Hareware/LCD/Touch.h
+            - path: ../Hardware/LCD/LCD.c
+            - path: ../Hardware/LCD/LCD.h
+            - path: ../Hardware/LCD/LCD_Define.c
+            - path: ../Hardware/LCD/LCD_Define.h
+            - path: ../Hardware/LCD/LCD_Hardware.c
+            - path: ../Hardware/LCD/LCD_Hardware.h
+            - path: ../Hardware/LCD/Touch.c
+            - path: ../Hardware/LCD/Touch.h
+            - path: ../Hardware/LCD/Touch_I2C.c
+            - path: ../Hardware/LCD/Touch_I2C.h
           folders: []
     - name: System
       files:
@@ -186,7 +186,7 @@ targets:
         - ../keil_project/Library
         - ../keil_project/Start
         - ../keil_project/User
-        - ../Hareware/LCD
+        - ../Hardware/LCD
         - ../Middle/FreeRTOS
         - ../keil_project/System
         - ../Middle/FreeRTOS/inc
