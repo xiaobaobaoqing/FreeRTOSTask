@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${default}",
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/../Hardware/**",     // 这样添加了MDK_ARM目录，这样在VSCode中可以找到目录下的头文件和库文件
+                "${workspaceFolder}/../MDK_ARM/**",
+                "${workspaceFolder}/../Middle/**"
+                
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "${workspaceFolder}/../MDK_ARM",        // 这样添加了目录，这样在VSCode中可以找到目录下的头文件和库文件
+                    "${workspaceFolder}/../Hardware",
+                    "${workspaceFolder}/../Middle"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "gnu++20",
+            "intelliSenseMode": "windows-gcc-x64",
+            "configurationProvider": "cl.eide"
+        }
+    ],
+    "version": 4
+}
