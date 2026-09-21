@@ -684,26 +684,6 @@ void LCD_ShowHexNum(uint16_t x, uint16_t y, uint8_t size, uint32_t Num, uint8_t 
 
 void LCD_Printf(uint16_t x, uint16_t y, uint8_t size,const char *format, ...)
 {
-    switch(size)
-    {   
-        case LCD_6x12:  
-            if(y>=23)y=23;
-            y=12*(y-1)+Y_SHIFT;
-            break;
-        case LCD_8x16:  
-            if(y>=17)y=17;
-            x=(x-1)*8+20;
-            y=16*(y-1)+Y_SHIFT;
-            break;
-        case LCD_12x24:
-            y=24*(y-1)+Y_SHIFT;
-            break;
-        case LCD_16x32:
-            y=32*(y-1)+Y_SHIFT;
-            break;
-    }
-
-
     char buffer[128]; // 临时字符串缓冲区
     va_list args;
     va_start(args, format);

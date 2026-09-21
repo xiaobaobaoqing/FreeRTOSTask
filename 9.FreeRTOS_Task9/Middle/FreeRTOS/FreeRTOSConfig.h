@@ -14,8 +14,8 @@
 #define configUSE_TICKLESS_IDLE                 0                           /* 1:使能tickless低功耗模式, 默认: 0 */
 #define configCPU_CLOCK_HZ                      SystemCoreClock             /* 定义CPU主频,单位:Hz,无默认需定义 */
 //#define configSYSTICK_CLOCK_HZ                (configCPU_CLOCK_HZ /8)     /* 定义SysTick时钟频率，当SysTick时钟频率与内核时钟频率不同时才可以定义,单位:Hz,默认:不定义 */
-#define configTICK_RATE_HZ                      20                          /* 定义系统时钟节拍频率,单位:Hz,无默认需定义 */
-#define configMAX_PRIORITIES                    5                           /* 定义最大优先级数,最大优先级=configMAX_PRIORITIES-1,无默认需定义 */
+#define configTICK_RATE_HZ                      1000                          /* 定义系统时钟节拍频率,单位:Hz,无默认需定义 */
+#define configMAX_PRIORITIES                    32                           /* 定义最大优先级数,最大优先级=configMAX_PRIORITIES-1,无默认需定义 */
 #define configMINIMAL_STACK_SIZE                128                         /* 定义空闲任务的栈空间大小,单位:Word,无默认需定义 */
 #define configMAX_TASK_NAME_LEN                 16                          /* 定义任务名最大字符数,默认:16 */
 #define configUSE_16_BIT_TICKS                  0                           /* 1:定义系统时钟节拍计数器的数据类型为16位无符号数,无默认需定义 */

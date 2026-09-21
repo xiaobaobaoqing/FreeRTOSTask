@@ -25,7 +25,8 @@
             "*.cc": "cpp",
             "cstddef": "c",
             "limits": "c",
-            "queue": "c"
+            "queue": "c",
+            "initializer_list": "c"
         },
         "[yaml]": {
             "editor.insertSpaces": true,
